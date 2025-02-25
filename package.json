@@ -5,13 +5,12 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon index.js"
+        "start": "nodemon index.js",
         "postinstall": "apt-get update && apt-get install -y libreoffice"
     },
     "author": "Akhil",
     "license": "ISC",
     "dependencies": {
-        "child_process": "^1.0.2",
         "cors": "^2.8.5",
         "docx-pdf": "^0.0.1",
         "express": "^4.21.2",
