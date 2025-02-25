@@ -25,9 +25,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // ✅ LibreOffice का पूरा Path सेट करें (Windows के लिए)
-// const libreOfficePath = `"C:\\Program Files\\LibreOffice\\program\\soffice.exe"`;
-const libreOfficePath = "/usr/bin/libreoffice";
-
+const libreOfficePath = `"C:\\Program Files\\LibreOffice\\program\\soffice.exe"`;
 
 // File Convert करने का API
 app.post("/convert", upload.single("file"), (req, res) => {
@@ -39,9 +37,7 @@ app.post("/convert", upload.single("file"), (req, res) => {
     const outputPath = path.join(filesDir, `${path.parse(req.file.originalname).name}.pdf`);
 
     // ✅ अब सही Command Windows पर चलेगी!
-    // const command = `${libreOfficePath} --headless --convert-to pdf --outdir "${filesDir}" "${inputPath}"`;
     const command = `${libreOfficePath} --headless --convert-to pdf --outdir "${filesDir}" "${inputPath}"`;
-
 
     exec(command, (err) => {
         if (err) {
