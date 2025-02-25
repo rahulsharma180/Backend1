@@ -26,7 +26,7 @@ const upload = multer({ storage });
 
 // ✅ LibreOffice का पूरा Path सेट करें (Windows के लिए)
 // const libreOfficePath = `"C:\\Program Files\\LibreOffice\\program\\soffice.exe"`;
-const libreOfficePath = "libreoffice"; // Linux ke liye yeh sahi hai
+const libreOfficePath = "/usr/bin/libreoffice";
 
 
 // File Convert करने का API
